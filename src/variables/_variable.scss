@@ -1,0 +1,77 @@
+$breakpointPrefixSeparator  : \: !default;
+$propValueUnit              : 'rem' !default;
+
+$valueAliasGlobal           : (
+  propValueAlias            : (
+    'il'                    : 'initial',
+    'it'                    : 'inherit',
+    'un'                    : 'unset',
+  )
+) !default;
+
+$valueScaleAliasSpacing     : (
+  propValueScaleAlias       : (
+    ''                      : '',
+    't'                     : 'top',
+    'r'                     : 'right',
+    'l'                     : 'left',
+    'b'                     : 'bottom',
+    'h'                     : (
+      'right',
+      'left'
+    ),
+    'v'                     : (
+      'top',
+      'bottom'
+    )
+  ),
+) !default;
+
+$valueScale                 : (
+  propValueScale            : (
+    '0'                     : 0,
+    '1'                     : 1, //'0.063'
+    '2'                     : 2, //'.125',
+    '3'                     : 4, //'.25',
+    '4'                     : 8, //'.5',
+    '5'                     : 12, //'.75',
+    '6'                     : 14, //'.875',
+    '7'                     : 16, //'1',
+    '8'                     : 18, //'1.125',
+    '9'                     : 20, //'1.25',
+    '10'                    : 24, //'1.5',
+    '11'                    : 28, //'1.75',
+    '12'                    : 32, //'2',
+    '13'                    : 36, //'2.25',
+    '14'                    : 40, //'2.5',
+    '15'                    : 48, //'3',
+    '16'                    : 64, //'4',
+  ),
+) !default;
+
+$valueScalePercentage       : (
+  propValueScale            : (
+    '10p'                   : 10,
+    '20p'                   : 20,
+    '25p'                   : 25,
+    '30p'                   : 30,
+    '33p'                   : 33.33333,
+    '40p'                   : 40,
+    '50p'                   : 50,
+    '60p'                   : 60,
+    '66p'                   : 66.66667,
+    '70p'                   : 70,
+    '75p'                   : 75,
+    '80p'                   : 80,
+    '90p'                   : 90,
+    '100p'                  : 100,
+  ),
+) !default;
+
+$breakpoints                : (
+  'nn'                      : null,
+  'sm'                      : '576px',
+  'md'                      : '768px',
+  'lg'                      : '992px',
+  'xl'                      : '1200px',
+);

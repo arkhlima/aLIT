@@ -1,0 +1,23 @@
+// atom config            : display
+// purpose                : generates atomic display classes based on breakpoint mixin
+
+$propMap                  : (
+  propName                : 'display',
+  propNameAlias           : 'd',
+  propValueAlias          : (
+    'n'                   : 'none',
+    'cn'                  : 'contents',
+    'in'                  : 'inline',
+    'b'                   : 'block',
+    'ib'                  : 'inline-block',
+    'f'                   : 'flex',
+    'if'                  : 'inline-flex',
+    'tb'                  : 'table',
+    'itb'                 : 'inline-table',
+    'tbc'                 : 'table-cell',
+    'tbr'                 : 'table-row',
+    'tbcl'                : 'table-column',
+  ),
+);
+
+@include mixin-breakpoint($propMap);

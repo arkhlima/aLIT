@@ -1,0 +1,16 @@
+// atom config            : position
+// purpose                : generatesvaomic position classes based on breakpoint mvan
+
+$propMap                  : (
+  propName                : 'position',
+  propNameAlias           : 'pos',
+  propValueAlias          : (
+    'a'                   : 'absolute',
+    'r'                   : 'relative',
+    's'                   : 'static',
+    'f'                   : 'fixed',
+    'st'                  : 'sticky',
+  ),
+);
+
+@include mixin-breakpoint($propMap);

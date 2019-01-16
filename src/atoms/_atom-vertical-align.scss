@@ -1,0 +1,19 @@
+// atom config            : vertical-align
+// purpose                : generates atomic vertical-align classes based on breakpoint mixin
+
+$propMap                  : (
+  propName                : 'vertical-align',
+  propNameAlias           : 'va',
+  propValueAlias          : (
+    'sup'                 : 'super',
+    't'                   : 'top',
+    'tt'                  : 'text-top',
+    'm'                   : 'middle',
+    'bl'                  : 'baseline',
+    'b'                   : 'bottom',
+    'tb'                  : 'text-bottom',
+    'sub'                 : 'sub',
+  ),
+);
+
+@include mixin-breakpoint($propMap);

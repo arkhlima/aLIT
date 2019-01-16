@@ -1,0 +1,16 @@
+// atom config            : word-wrap
+// purpose                : generates atomic word-wrap classes based on breakpoint mixin
+
+$propMap                  : (
+  propName                : 'word-wrap',
+  propNameAlias           : 'wow',
+  propValueAlias          : (
+    'n'                   : 'none',
+    'nm'                  : 'normal',
+    'u'                   : 'unrestricted',
+    's'                   : 'suppress',
+    'b'                   : 'break-word',
+  ),
+);
+
+@include mixin-breakpoint($propMap);

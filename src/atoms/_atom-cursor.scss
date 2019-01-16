@@ -1,0 +1,19 @@
+// atom config            : cursor
+// purpose                : generates atomic cursor classes based on breakpoint mixin
+
+$propMap                  : (
+  propName                : 'cursor',
+  propNameAlias           : 'cur',
+  propValueAlias          : (
+    'a'                   : 'auto',
+    'd'                   : 'default',
+    'c'                   : 'crosshair',
+    'ha'                  : 'hand',
+    'he'                  : 'help',
+    'm'                   : 'move',
+    'p'                   : 'pointer',
+    't'                   : 'text',
+  ),
+);
+
+@include mixin-breakpoint($propMap);

@@ -1,0 +1,24 @@
+{
+  "name": "alit CSS",
+  "description": "So called atomic CSS",
+  "license": "MIT",
+  "main": "css/index.css",
+  "style": "css/index.css",
+  "files": [
+    "css/",
+    "scss/"
+  ],
+  "scripts": {
+    "build": "gulp sass",
+    "watch": "gulp watch"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "cssnano": "^4.1.8",
+    "gulp": "^4.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-yarn": "^2.0.0",
+    "postcss-import": "^12.0.1"
+  }
+}

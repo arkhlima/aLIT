@@ -1,0 +1,28 @@
+// atom config            : overflow
+// purpose                : generates atomic overflow classes based on breakpoint mixin
+
+$propMap                  : (
+  propName                : 'overflow',
+  propNameAlias           : 'ov',
+  propValueAlias          : (
+    'v'                   : 'visible',
+    'h'                   : 'hidden',
+    's'                   : 'scroll',
+    'a'                   : 'auto',
+  ),
+  propVariant             : (
+    default               : '',
+    axisX                 : 'x',
+    axisY                 : 'y',
+    // default               : '',
+    // axisX                 : (
+    //   variant             : 'x',
+    // ),
+    // axisY                 : (
+    //   variant             : 'y',
+    // ),
+  ),
+);
+
+
+@include mixin-breakpoint($propMap);

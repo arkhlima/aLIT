@@ -1,0 +1,15 @@
+// atom config            : text-transform
+// purpose                : generatesvaomic text-transform classes based on breakpoint mvan
+
+$propMap                  : (
+  propName                : 'text-transform',
+  propNameAlias           : 'tt',
+  propValueAlias          : (
+    'n'                   : 'none',
+    'c'                   : 'capitalize',
+    'u'                   : 'uppercase',
+    'l'                   : 'lowercase',
+  ),
+);
+
+@include mixin-breakpoint($propMap);

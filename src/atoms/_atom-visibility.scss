@@ -1,0 +1,14 @@
+// atom config            : visibility
+// purpose                : generates atomic visibility classes based on breakpoint mixin
+
+$propMap                  : (
+  propName                : 'visibility',
+  propNameAlias           : 'v',
+  propValueAlias          : (
+    'v'                   : 'visible',
+    'h'                   : 'hidden',
+    'c'                   : 'collapse',
+  ),
+);
+
+@include mixin-breakpoint($propMap);

@@ -1,0 +1,13 @@
+// atom config            : padding
+// purpose                : generates atomic padding classes based on breakpoint mixin
+
+$propMap                  : (
+  propName                : 'padding',
+  propNameAlias           : 'p',
+);
+
+$propMap: recursive-map-merge($propMap, $valueScaleAliasSpacing, $config:());
+$propMap: recursive-map-merge($propMap, $valueScale, $config:());
+$propMap: recursive-map-merge($propMap, $valueScalePercentage, $config:());
+
+@include mixin-breakpoint($propMap);

@@ -1,0 +1,14 @@
+// atom config            : margin
+// purpose                : generates atomic margin classes based on breakpoint mixin
+
+$propMap                  : (
+  propName                : 'margin',
+  propNameAlias           : 'm',
+  propValueNegative       : 1,
+);
+
+$propMap: recursive-map-merge($propMap, $valueScaleAliasSpacing, $config:());
+$propMap: recursive-map-merge($propMap, $valueScale, $config:());
+$propMap: recursive-map-merge($propMap, $valueScalePercentage, $config:());
+
+@include mixin-breakpoint($propMap);

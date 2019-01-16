@@ -1,0 +1,15 @@
+// atom config            : text-align
+// purpose                : generatesvaomic text-align classes based on breakpoint mvan
+
+$propMap                  : (
+  propName                : 'text-align',
+  propNameAlias           : 'ta',
+  propValueAlias          : (
+    'r'                   : 'right',
+    'c'                   : 'center',
+    'l'                   : 'left',
+    'j'                   : 'justify',
+  ),
+);
+
+@include mixin-breakpoint($propMap);

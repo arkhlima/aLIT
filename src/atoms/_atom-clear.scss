@@ -1,0 +1,15 @@
+// atom config            : clear
+// purpose                : generates atomic clear classes based on breakpoint mixin
+
+$propMap                  : (
+  propName                : 'clear',
+  propNameAlias           : 'cl',
+  propValueAlias          : (
+    'n'                   : 'none',
+    'l'                   : 'left',
+    'r'                   : 'right',
+    'b'                   : 'both',
+  ),
+);
+
+@include mixin-breakpoint($propMap);

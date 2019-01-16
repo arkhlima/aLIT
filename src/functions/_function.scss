@@ -1,0 +1,111 @@
+// A lightweight Sass function that merges multidimensional maps recursively.
+// https://github.com/pentzzsolt/sass-recursive-map-merge
+
+@function recursive-map-merge($map1, $map2, $config:()) {
+  @if (type-of($map1)==map or (type-of($map1)==list and length($map1)==0)) and (type-of($map2)==map or (type-of($map2)==list and length($map2)==0)) {
+    $result: $map1;
+
+    @each $key,
+    $value in $map2 {
+      @if (type-of(map-get($result, $key))==map and type-of($value)==map) {
+        $result: map-merge($result, ($key: recursive-map-merge(map-get($result, $key), $value)));
+      }
+
+      @else if (map-get($config, "merge-lists") and type-of(map-get($result, $key))==list and type-of($value)==list) {
+        $result: map-merge($result, ($key: join(map-get($result, $key), $value)));
+      }
+
+      @else {
+        $result: map-merge($result, ($key: $value));
+      }
+    }
+
+    @return $result;
+  }
+
+  @else {
+    @warn "recursive-map-merge() expects it\'s parameters to be map types!";
+    @return null;
+  }
+}
+
+@function isDashProp($a) {
+  @if $a==''or $a==null {
+    @return null;
+  }
+
+  @else {
+    @return '-';
+  }
+}
+
+@function isUnit($x, $y) {
+  @if (map-has-key($propMap, 'propValueScale')) {
+    @if $x == 'a'or $x == 0 {
+      @return null;
+    }
+    @else if str-index($x, 'p') {
+      @return '%';
+    }
+    @else {
+      @return $y;
+    }
+  }
+
+  @else {
+    @return null;
+  }
+}
+
+@function isPropValue($propMap) {
+  @if (map-has-key($propMap, 'propValueScale')) {
+    @return 'propValueScale';
+  }
+
+  @else {
+    @return 'propValueAlias';
+  }
+}
+
+@function isDashNegative($v, $w, $x, $y) {
+  @if $v !='v'and $v !='h'and $w !='a'and $w != 0 and $x==$y and $y==1 {
+    @return '-';
+  }
+
+  @else {
+    @return null;
+  }
+}
+
+@function isLoopNegative($y, $x, $z) {
+  @if $z==1 and $y !='v'and $y !='h'and $x != 0 and $x !=auto {
+    @return 1;
+  }
+
+  @else {
+    @return 0;
+  }
+}
+
+@function isPercentage($a) {
+  @if str-index($a, 'p') {
+    @return true;
+  }
+  @else {
+    @return false;
+  }
+}
+
+@function isValue($test, $size, $x, $y) {
+  @if isPropValue($test) != 'propValueAlias' and $size != 0 {
+    @if isPercentage($x) == true {
+      @return $size + isUnit($x, $y);
+    }
+    @else if isPercentage($x) == false {
+      @return $size / 16 + isUnit($x, $y);
+    }
+  }
+  @else {
+    @return $size;
+  }
+}

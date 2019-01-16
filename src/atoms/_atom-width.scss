@@ -1,0 +1,12 @@
+// atom config            : width
+// purpose                : generates atomic width classes based on breakpoint mixin
+
+$propMap                  : (
+  propName                : 'width',
+  propNameAlias           : 'w',
+);
+
+$propMap: recursive-map-merge($propMap, $valueScale, $config:());
+$propMap: recursive-map-merge($propMap, $valueScalePercentage, $config:());
+
+@include mixin-breakpoint($propMap);

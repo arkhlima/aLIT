@@ -1,0 +1,16 @@
+// atom config            : white-space
+// purpose                : generates atomic white-space classes based on breakpoint mixin
+
+$propMap                  : (
+  propName                : 'white-space',
+  propNameAlias           : 'whs',
+  propValueAlias          : (
+    'n'                   : 'normal',
+    'p'                   : 'pre',
+    'nw'                  : 'nowrap',
+    'pw'                  : 'pre-wrap',
+    'pl'                  : 'pre-line',
+  ),
+);
+
+@include mixin-breakpoint($propMap);
