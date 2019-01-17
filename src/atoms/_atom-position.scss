@@ -1,10 +1,10 @@
 // atom config            : position
-// purpose                : generatesvaomic position classes based on breakpoint mvan
+// purpose                : generates atomic position classes
 
 $propMap                  : (
   propName                : 'position',
-  propNameAlias           : 'pos',
-  propValueAlias          : (
+  propNameAbbr            : 'pos',
+  propValueAbbr           : (
     'a'                   : 'absolute',
     'r'                   : 'relative',
     's'                   : 'static',

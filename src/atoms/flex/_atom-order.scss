@@ -1,0 +1,11 @@
+// atom config            : order
+// purpose                : generates atomic order classes
+
+$propMap                  : (
+  propName                : 'order',
+  propNameAbbr            : 'ord',
+);
+
+$propMap: recursive-map-merge($propMap, $valueScaleOrder, $config:());
+
+@include mixin-breakpoint($propMap);

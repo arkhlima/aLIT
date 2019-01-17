@@ -1,10 +1,10 @@
 // atom config            : text-align
-// purpose                : generatesvaomic text-align classes based on breakpoint mvan
+// purpose                : generates atomic text-align classes
 
 $propMap                  : (
   propName                : 'text-align',
-  propNameAlias           : 'ta',
-  propValueAlias          : (
+  propNameAbbr            : 'ta',
+  propValueAbbr           : (
     'r'                   : 'right',
     'c'                   : 'center',
     'l'                   : 'left',

@@ -1,0 +1,15 @@
+// atom config            : flex-direction
+// purpose                : generates atomic flex-direction classes
+
+$propMap                  : (
+  propName                : 'flex-direction',
+  propNameAbbr            : 'fxd',
+  propValueAbbr           : (
+    'c'                   : 'column',
+    'cr'                  : 'column-reverse',
+    'r'                   : 'row',
+    'rr'                  : 'row-reverse',
+  ),
+);
+
+@include mixin-breakpoint($propMap);

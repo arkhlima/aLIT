@@ -1,0 +1,11 @@
+// atom config            : z-index
+// purpose                : generates atomic z-index classes
+
+$propMap                  : (
+  propName                : 'z-index',
+  propNameAbbr            : 'z',
+);
+
+$propMap: recursive-map-merge($propMap, $valueScaleOrder, $config:());
+
+@include mixin-breakpoint($propMap);

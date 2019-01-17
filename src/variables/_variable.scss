@@ -1,16 +1,22 @@
 $breakpointPrefixSeparator  : \: !default;
-$propValueUnit              : 'rem' !default;
+$breakpoint                 : (
+  'nn'                      : null,
+  'sm'                      : '576px',
+  'md'                      : '768px',
+  'lg'                      : '992px',
+  'xl'                      : '1200px',
+);
 
-$valueAliasGlobal           : (
-  propValueAlias            : (
+$valueAbbrGlobal            : (
+  propValueAbbr             : (
     'il'                    : 'initial',
     'it'                    : 'inherit',
     'un'                    : 'unset',
-  )
+  ),
 ) !default;
 
-$valueScaleAliasSpacing     : (
-  propValueScaleAlias       : (
+$valueAbbrScale             : (
+  propValueAbbrScale        : (
     ''                      : '',
     't'                     : 'top',
     'r'                     : 'right',
@@ -18,12 +24,12 @@ $valueScaleAliasSpacing     : (
     'b'                     : 'bottom',
     'h'                     : (
       'right',
-      'left'
+      'left',
     ),
     'v'                     : (
       'top',
-      'bottom'
-    )
+      'bottom',
+    ),
   ),
 ) !default;
 
@@ -68,10 +74,34 @@ $valueScalePercentage       : (
   ),
 ) !default;
 
-$breakpoints                : (
-  'nn'                      : null,
-  'sm'                      : '576px',
-  'md'                      : '768px',
-  'lg'                      : '992px',
-  'xl'                      : '1200px',
-);
+$valueScaleVh              : (
+  propValueScale           : (
+    '25vh'                 : 25,
+    '50vh'                 : 50,
+    '75vh'                 : 75,
+    '100vh'                : 100,
+  ),
+) !default;
+
+$valueScaleVw              : (
+  propValueScale           : (
+    '25vw'                 : 25,
+    '50vw'                 : 50,
+    '75vw'                 : 75,
+    '100vw'                : 100,
+  ),
+) !default;
+
+$valueScaleOrder            : (
+  propValueScale            : (
+    '1'                     : 1,
+    '2'                     : 2,
+    '3'                     : 3,
+    '4'                     : 4,
+    '5'                     : 5,
+    '6'                     : 6,
+    '7'                     : 7,
+    '8'                     : 8,
+    '999'                   : 999,
+  ),
+) !default;

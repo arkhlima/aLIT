@@ -1,10 +1,10 @@
 // atom config            : float
-// purpose                : generates atomic float classes based on breakpoint mixin
+// purpose                : generates atomic float classes
 
 $propMap                  : (
   propName                : 'float',
-  propNameAlias           : 'f',
-  propValueAlias          : (
+  propNameAbbr            : 'f',
+  propValueAbbr           : (
     'n'                   : 'none',
     'r'                   : 'right',
     'l'                   : 'left',

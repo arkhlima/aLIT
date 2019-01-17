@@ -1,10 +1,10 @@
 // atom config            : visibility
-// purpose                : generates atomic visibility classes based on breakpoint mixin
+// purpose                : generates atomic visibility classes
 
 $propMap                  : (
   propName                : 'visibility',
-  propNameAlias           : 'v',
-  propValueAlias          : (
+  propNameAbbr            : 'v',
+  propValueAbbr           : (
     'v'                   : 'visible',
     'h'                   : 'hidden',
     'c'                   : 'collapse',

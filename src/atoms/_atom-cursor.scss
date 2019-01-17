@@ -1,10 +1,10 @@
 // atom config            : cursor
-// purpose                : generates atomic cursor classes based on breakpoint mixin
+// purpose                : generates atomic cursor classes
 
 $propMap                  : (
   propName                : 'cursor',
-  propNameAlias           : 'cur',
-  propValueAlias          : (
+  propNameAbbr            : 'cur',
+  propValueAbbr           : (
     'a'                   : 'auto',
     'd'                   : 'default',
     'c'                   : 'crosshair',

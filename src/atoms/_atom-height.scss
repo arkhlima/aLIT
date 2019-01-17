@@ -1,14 +1,14 @@
-// atom config            : width
-// purpose                : generates atomic width classes
+// atom config            : height
+// purpose                : generates atomic height classes
 
 $propMap                  : (
-  propName                : 'width',
-  propNameAbbr            : 'w',
+  propName                : 'height',
+  propNameAbbr            : 'h',
   propValueUnit           : 'rem',
 );
 
 $propMap: recursive-map-merge($propMap, $valueScale, $config:());
 $propMap: recursive-map-merge($propMap, $valueScalePercentage, $config:());
-$propMap: recursive-map-merge($propMap, $valueScaleVw, $config:());
+$propMap: recursive-map-merge($propMap, $valueScaleVh, $config:());
 
 @include mixin-breakpoint($propMap);

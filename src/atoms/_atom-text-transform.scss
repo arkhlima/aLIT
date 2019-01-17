@@ -1,10 +1,10 @@
 // atom config            : text-transform
-// purpose                : generatesvaomic text-transform classes based on breakpoint mvan
+// purpose                : generates atomic text-transform classes
 
 $propMap                  : (
   propName                : 'text-transform',
-  propNameAlias           : 'tt',
-  propValueAlias          : (
+  propNameAbbr            : 'tt',
+  propValueAbbr           : (
     'n'                   : 'none',
     'c'                   : 'capitalize',
     'u'                   : 'uppercase',

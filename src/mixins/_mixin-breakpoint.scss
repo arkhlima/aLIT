@@ -1,14 +1,19 @@
-@mixin mixin-breakpoint($propMap) {
-  $propName: map-get($propMap, 'propName');
-  $propNameAlias: map-get($propMap, 'propNameAlias');
+// spaghetti mixin 🍝
 
-  $propValueAlias: map-get($propMap, 'propValueAlias');
-  $propValueScaleAlias: map-get($propMap, 'propValueScaleAlias');
+@mixin mixin-breakpoint($propMap) {
+  $propMap: recursive-map-merge($propMap, $valueAbbrGlobal, $config:());
+
+  $propName: map-get($propMap, 'propName');
+  $propNameAbbr: map-get($propMap, 'propNameAbbr');
+
+  $propValueAbbr: map-get($propMap, 'propValueAbbr');
+  $propValueAbbrScale: map-get($propMap, 'propValueAbbrScale');
 
   $propNegative: map-get($propMap, 'propValueNegative');
+  $propUnit: map-get($propMap, 'propValueUnit');
 
   @each $breakpointPrefix,
-  $breakpointValue in $breakpoints {
+  $breakpointValue in $breakpoint {
     @if $breakpointValue !=null {
       @media screen and (min-width: $breakpointValue) {
 
@@ -16,22 +21,22 @@
         $y in map-get($propMap, 'propVariant') {
 
           @each $xx,
-          $yy in $propValueScaleAlias {
+          $yy in $propValueAbbrScale {
 
             @each $xxx,
             $yyy in map-get($propMap, isPropValue($propMap)) {
               @for $i from 0 through isLoopNegative($xx, $yyy, $propNegative) {
-                .#{ $breakpointPrefix }#{ $breakpointPrefixSeparator }#{ isDashNegative($xx, $xxx, $i, $propNegative) }#{ $propNameAlias }#{ $y }#{ $xx }#{ $xxx } {
+                .#{ $breakpointPrefix }#{ $breakpointPrefixSeparator }#{ isDashNegative($xx, $xxx, $i, $propNegative) }#{ $propNameAbbr }#{ $y }#{ $xx }#{ $xxx } {
                   @if $xx=='v'or $xx=='h' {
 
                     @each $xxxx,
-                    $yyyy in map-get($propValueScaleAlias, $xx) {
-                      #{ $propName }#{ isDashProp($xx) }#{ $xxxx }#{ isDashProp($y) }#{ $y }: #{ isDashNegative($xx, $xxx, $i, $propNegative) }#{ isValue($propMap, $yyy, $xxx, $propValueUnit) };
+                    $yyyy in map-get($propValueAbbrScale, $xx) {
+                      #{ $propName }#{ isDashProp($xx) }#{ $xxxx }#{ isDashProp($y) }#{ $y }: #{ isDashNegative($xx, $xxx, $i, $propNegative) }#{ isValue($propMap, $yyy, $xxx, $propUnit) };
                     }
                   }
 
                   @else {
-                    #{ $propName }#{ isDashProp($xx) }#{ $yy }#{ isDashProp($y) }#{ $y }: #{ isDashNegative($xx, $xxx, $i, $propNegative) }#{ isValue($propMap, $yyy, $xxx, $propValueUnit) };
+                    #{ $propName }#{ isDashProp($xx) }#{ $yy }#{ isDashProp($y) }#{ $y }: #{ isDashNegative($xx, $xxx, $i, $propNegative) }#{ isValue($propMap, $yyy, $xxx, $propUnit) };
                   }
                 }
               }
@@ -47,22 +52,22 @@
       $y in map-get($propMap, 'propVariant') {
 
         @each $xx,
-        $yy in $propValueScaleAlias {
+        $yy in $propValueAbbrScale {
 
           @each $xxx,
           $yyy in map-get($propMap, isPropValue($propMap)) {
             @for $i from 0 through isLoopNegative($xx, $yyy, $propNegative) {
-              .#{ isDashNegative($xx, $xxx, $i, $propNegative) }#{ $propNameAlias }#{ $y }#{ $xx }#{ $xxx } {
+              .#{ isDashNegative($xx, $xxx, $i, $propNegative) }#{ $propNameAbbr }#{ $y }#{ $xx }#{ $xxx } {
                 @if $xx=='v'or $xx=='h' {
 
                   @each $xxxx,
-                  $yyyy in map-get($propValueScaleAlias, $xx) {
-                    #{ $propName }#{ isDashProp($xx) }#{ $xxxx }#{ isDashProp($y) }#{ $y }: #{ isDashNegative($xx, $xxx, $i, $propNegative) }#{ isValue($propMap, $yyy, $xxx, $propValueUnit) };
+                  $yyyy in map-get($propValueAbbrScale, $xx) {
+                    #{ $propName }#{ isDashProp($xx) }#{ $xxxx }#{ isDashProp($y) }#{ $y }: #{ isDashNegative($xx, $xxx, $i, $propNegative) }#{ isValue($propMap, $yyy, $xxx, $propUnit) };
                   }
                 }
 
                 @else {
-                  #{ $propName }#{ isDashProp($xx) }#{ $yy }#{ isDashProp($y) }#{ $y }: #{ isDashNegative($xx, $xxx, $i, $propNegative) }#{ isValue($propMap, $yyy, $xxx, $propValueUnit) };
+                  #{ $propName }#{ isDashProp($xx) }#{ $yy }#{ isDashProp($y) }#{ $y }: #{ isDashNegative($xx, $xxx, $i, $propNegative) }#{ isValue($propMap, $yyy, $xxx, $propUnit) };
                 }
               }
             }

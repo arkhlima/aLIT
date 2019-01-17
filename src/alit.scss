@@ -1,10 +1,3 @@
-/*
-todos:
-1. deep functions -> convert px to rem/ em
-    a. return the value unit (DONE)
-2. merge deep map -> prop map (DONE)
-*/
-
 // IMPORT EVERYTHING!
 
 // import -> variables
@@ -17,10 +10,18 @@ todos:
 @import 'mixins/mixin-breakpoint';
 
 // import -> atoms
+@import 'atoms/flex/atom-align-content';
+@import 'atoms/flex/atom-align-items';
+@import 'atoms/flex/atom-align-self';
+@import 'atoms/flex/atom-flex-direction';
+@import 'atoms/flex/atom-flex-wrap';
+@import 'atoms/flex/atom-justify-content';
+@import 'atoms/flex/atom-order';
 @import 'atoms/atom-clear';
 @import 'atoms/atom-cursor';
 @import 'atoms/atom-display';
 @import 'atoms/atom-float';
+@import 'atoms/atom-height';
 @import 'atoms/atom-margin';
 @import 'atoms/atom-overflow';
 @import 'atoms/atom-padding';
@@ -32,3 +33,4 @@ todos:
 @import 'atoms/atom-white-space';
 @import 'atoms/atom-width';
 @import 'atoms/atom-word-wrap';
+@import 'atoms/atom-z-index';

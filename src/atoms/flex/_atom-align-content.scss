@@ -1,0 +1,17 @@
+// atom config            : align-content
+// purpose                : generates atomic align-content classes
+
+$propMap                  : (
+  propName                : 'align-content',
+  propNameAbbr            : 'ac',
+  propValueAbbr           : (
+    'sb'                  : 'space-between',
+    'sa'                  : 'space-around',
+    'c'                   : 'center',
+    'fe'                  : 'flex-end',
+    'fs'                  : 'flex-start',
+    's'                   : 'stretch',
+  ),
+);
+
+@include mixin-breakpoint($propMap);

@@ -1,10 +1,10 @@
 // atom config            : display
-// purpose                : generates atomic display classes based on breakpoint mixin
+// purpose                : generates atomic display classes
 
 $propMap                  : (
   propName                : 'display',
-  propNameAlias           : 'd',
-  propValueAlias          : (
+  propNameAbbr            : 'd',
+  propValueAbbr           : (
     'n'                   : 'none',
     'cn'                  : 'contents',
     'in'                  : 'inline',

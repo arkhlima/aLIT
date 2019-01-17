@@ -1,0 +1,16 @@
+// atom config            : justify-content
+// purpose                : generates atomic justify-content classes
+
+$propMap                  : (
+  propName                : 'justify-content',
+  propNameAbbr            : 'js',
+  propValueAbbr           : (
+    'sb'                  : 'space-between',
+    'sa'                  : 'space-around',
+    'c'                   : 'center',
+    'fe'                  : 'flex-end',
+    'fs'                  : 'flex-start',
+  ),
+);
+
+@include mixin-breakpoint($propMap);

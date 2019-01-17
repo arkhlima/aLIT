@@ -1,0 +1,14 @@
+// atom config            : flex-wrap
+// purpose                : generates atomic flex-wrap classes
+
+$propMap                  : (
+  propName                : 'flex-wrap',
+  propNameAbbr            : 'fxd',
+  propValueAbbr           : (
+    'n'                   : 'nowrap',
+    'w'                   : 'wrap',
+    'wr'                  : 'wrap-reverse',
+  ),
+);
+
+@include mixin-breakpoint($propMap);
