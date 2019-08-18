@@ -14,7 +14,7 @@
 
   @each $breakpointPrefix,
   $breakpointValue in $breakpoint {
-    @if $breakpointValue !=null {
+    @if $breakpointValue != null {
       @media screen and (min-width: $breakpointValue) {
 
         @each $x,
@@ -27,7 +27,7 @@
             $yyy in map-get($propMap, isPropValue($propMap)) {
               @for $i from 0 through isLoopNegative($xx, $yyy, $propNegative) {
                 .#{ $breakpointPrefix }#{ $breakpointPrefixSeparator }#{ isDashNegative($xx, $xxx, $i, $propNegative) }#{ $propNameAbbr }#{ $y }#{ $xx }#{ $xxx } {
-                  @if $xx=='v'or $xx=='h' {
+                  @if $xx == 'v' or $xx == 'h' {
 
                     @each $xxxx,
                     $yyyy in map-get($propValueAbbrScale, $xx) {
@@ -58,7 +58,7 @@
           $yyy in map-get($propMap, isPropValue($propMap)) {
             @for $i from 0 through isLoopNegative($xx, $yyy, $propNegative) {
               .#{ isDashNegative($xx, $xxx, $i, $propNegative) }#{ $propNameAbbr }#{ $y }#{ $xx }#{ $xxx } {
-                @if $xx=='v'or $xx=='h' {
+                @if $xx == 'v' or $xx == 'h' {
 
                   @each $xxxx,
                   $yyyy in map-get($propValueAbbrScale, $xx) {

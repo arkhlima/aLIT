@@ -1,0 +1,12 @@
+
+// atom config            : font-size
+// purpose                : generates atomic font-size classes
+
+$propMap                  : (
+  propName                : 'font-size',
+  propNameAbbr            : 'fz',
+  propValueUnit           : 'rem',
+);
+
+$propMap: recursive-map-merge($propMap, $valueFontSize, $config:());
+@include mixin-breakpoint($propMap);

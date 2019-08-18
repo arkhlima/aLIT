@@ -1,0 +1,11 @@
+
+// atom config            : line-height
+// purpose                : generates atomic line-height classes
+
+$propMap                  : (
+  propName                : 'line-height',
+  propNameAbbr            : 'lh',
+);
+
+$propMap: recursive-map-merge($propMap, $valueLineHeight, $config:());
+@include mixin-breakpoint($propMap);

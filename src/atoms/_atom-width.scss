@@ -7,8 +7,8 @@ $propMap                  : (
   propValueUnit           : 'rem',
 );
 
-$propMap: recursive-map-merge($propMap, $valueScale, $config:());
-$propMap: recursive-map-merge($propMap, $valueScalePercentage, $config:());
-$propMap: recursive-map-merge($propMap, $valueScaleVw, $config:());
+$propMap: recursive-map-merge($propMap, $value, $config:());
+$propMap: recursive-map-merge($propMap, $valueUnitPercentage, $config:());
+$propMap: recursive-map-merge($propMap, $valueUnitVw, $config:());
 
 @include mixin-breakpoint($propMap);

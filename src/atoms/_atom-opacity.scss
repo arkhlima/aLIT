@@ -1,0 +1,11 @@
+
+// atom config            : opacity
+// purpose                : generates atomic opacity classes
+
+$propMap                  : (
+  propName                : 'opacity',
+  propNameAbbr            : 'op',
+);
+
+$propMap: recursive-map-merge($propMap, $valueOpacity, $config:());
+@include mixin-breakpoint($propMap);

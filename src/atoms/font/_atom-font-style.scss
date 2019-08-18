@@ -1,0 +1,11 @@
+
+// atom config            : font-style
+// purpose                : generates atomic font-style classes
+
+$propMap                  : (
+  propName                : 'font-style',
+  propNameAbbr            : 'fs',
+);
+
+$propMap: recursive-map-merge($propMap, $valueFontStyle, $config:());
+@include mixin-breakpoint($propMap);

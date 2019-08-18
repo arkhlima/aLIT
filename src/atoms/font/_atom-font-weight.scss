@@ -1,0 +1,11 @@
+
+// atom config            : font-weight
+// purpose                : generates atomic font-weight classes
+
+$propMap                  : (
+  propName                : 'font-weight',
+  propNameAbbr            : 'fw',
+);
+
+$propMap: recursive-map-merge($propMap, $valueFontWeight, $config:());
+@include mixin-breakpoint($propMap);

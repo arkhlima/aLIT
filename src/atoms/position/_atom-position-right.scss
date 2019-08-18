@@ -1,9 +1,10 @@
-// atom config            : height
-// purpose                : generates atomic height classes
+// atom config            : right
+// purpose                : generates atomic right classes
 
 $propMap                  : (
-  propName                : 'height',
-  propNameAbbr            : 'h',
+  propName                : 'right',
+  propNameAbbr            : 'right',
+  propValueNegative       : 1,
   propValueUnit           : 'rem',
   propValueAuto           : 1,
 );
@@ -11,6 +12,5 @@ $propMap                  : (
 $propMap: recursive-map-merge($propMap, $valueAuto, $config:());
 $propMap: recursive-map-merge($propMap, $value, $config:());
 $propMap: recursive-map-merge($propMap, $valueUnitPercentage, $config:());
-$propMap: recursive-map-merge($propMap, $valueUnitVh, $config:());
 
 @include mixin-breakpoint($propMap);

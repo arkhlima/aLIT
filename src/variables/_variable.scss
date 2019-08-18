@@ -1,17 +1,18 @@
 $breakpointPrefixSeparator  : \: !default;
+
 $breakpoint                 : (
   'nn'                      : null,
-  'sm'                      : '576px',
+  'sm'                      : '640px',
   'md'                      : '768px',
-  'lg'                      : '992px',
-  'xl'                      : '1200px',
+  'lg'                      : '1024px',
+  // 'xl'                      : '1280px',
 );
 
 $valueAbbrGlobal            : (
   propValueAbbr             : (
-    'il'                    : 'initial',
-    'it'                    : 'inherit',
-    'un'                    : 'unset',
+    // 'il'                    : 'initial',
+    // 'it'                    : 'inherit',
+    // 'un'                    : 'unset',
   ),
 ) !default;
 
@@ -33,19 +34,45 @@ $valueAbbrScale             : (
   ),
 ) !default;
 
-$valueScale                 : (
-  propValueScale            : (
+$valueAuto                  : (
+  propValue                 : (
+    'a'                     : 'auto',
+  )
+) !default;
+
+$value                      : (
+  propValue                 : (
     '0'                     : 0,
-    '1'                     : 1, //'0.063'
-    '2'                     : 2, //'.125',
-    '3'                     : 4, //'.25',
-    '4'                     : 8, //'.5',
-    '5'                     : 12, //'.75',
-    '6'                     : 14, //'.875',
-    '7'                     : 16, //'1',
-    '8'                     : 18, //'1.125',
-    '9'                     : 20, //'1.25',
-    '10'                    : 24, //'1.5',
+    '1'                     : 4,    //'.25',
+    '2'                     : 8,    //'.5',
+    '3'                     : 12,   //'.75',
+    '4'                     : 16,   //'1',
+    '5'                     : 20,   //'1.25',
+    '6'                     : 24,   //'1.5',
+    '7'                     : 28,   //'1.75',
+    '8'                     : 32,   //'2',
+    '10'                    : 36,   //'2.25',
+    '12'                    : 40,   //'2.5',
+    '14'                    : 48,   //'3',
+    '16'                    : 64,   //'4',
+    '20'                    : 80,   //'5'
+    '24'                    : 96,   //'6',
+    '32'                    : 128,  //'8'
+    '40'                    : 160,  //'10'
+    '48'                    : 192,  //'12'
+    '56'                    : 224,  //'14'
+    '64'                    : 256,  //'16'
+  ),
+) !default;
+
+$valueFontSize              : (
+  propValue                 : (
+    '1'                     : 12, //'.75',
+    '2'                     : 14, //'.875',
+    '3'                     : 16, //'1',
+    '4'                     : 18, //'1.125',
+    '5'                     : 20, //'1.25',
+    '6'                     : 24, //'1.5',
     '11'                    : 28, //'1.75',
     '12'                    : 32, //'2',
     '13'                    : 36, //'2.25',
@@ -55,8 +82,77 @@ $valueScale                 : (
   ),
 ) !default;
 
-$valueScalePercentage       : (
-  propValueScale            : (
+$valueBorderRadius          : (
+  propValue                 : (
+    '100'                   : 100,
+    '200'                   : 200,
+    '300'                   : 300,
+    '400'                   : 400,
+    '500'                   : 500,
+    '600'                   : 600,
+    '700'                   : 700,
+    '800'                   : 800,
+    '900'                   : 500,
+  ),
+) !default;
+
+$valueFontStyle             : (
+  propValue                 : (
+    'i'                     : 'italic',
+    'n'                     : 'normal',
+  ),
+) !default;
+
+$valueFontWeight            : (
+  propValue                 : (
+    '100'                   : 100,
+    '200'                   : 200,
+    '300'                   : 300,
+    '400'                   : 400,
+    '500'                   : 500,
+    '600'                   : 600,
+    '700'                   : 700,
+    '800'                   : 800,
+    '900'                   : 500,
+  ),
+) !default;
+
+$valueLineHeight            : (
+  propValue                 : (
+    '1'                     : 1,
+    '2'                     : 1.25,
+    '3'                     : 1.5,
+    '4'                     : 1.75,
+    '5'                     : 2,
+  ),
+) !default;
+
+$valueOpacity               : (
+  propValue                 : (
+    '0'                     : 0,
+    '1'                     : 2.5,
+    '2'                     : 5,
+    '3'                     : 7.5,
+    '4'                     : 1,
+  ),
+) !default;
+
+$valueOrder                 : (
+  propValue                 : (
+    '1'                     : 1,
+    '2'                     : 2,
+    '3'                     : 3,
+    '4'                     : 4,
+    '5'                     : 5,
+    '6'                     : 6,
+    '7'                     : 7,
+    '8'                     : 8,
+    '999'                   : 999,
+  ),
+) !default;
+
+$valueUnitPercentage        : (
+  propValue                 : (
     '10p'                   : 10,
     '20p'                   : 20,
     '25p'                   : 25,
@@ -74,8 +170,8 @@ $valueScalePercentage       : (
   ),
 ) !default;
 
-$valueScaleVh              : (
-  propValueScale           : (
+$valueUnitVh               : (
+  propValue                : (
     '25vh'                 : 25,
     '50vh'                 : 50,
     '75vh'                 : 75,
@@ -83,25 +179,11 @@ $valueScaleVh              : (
   ),
 ) !default;
 
-$valueScaleVw              : (
-  propValueScale           : (
+$valueUnitVw               : (
+  propValue                : (
     '25vw'                 : 25,
     '50vw'                 : 50,
     '75vw'                 : 75,
     '100vw'                : 100,
-  ),
-) !default;
-
-$valueScaleOrder            : (
-  propValueScale            : (
-    '1'                     : 1,
-    '2'                     : 2,
-    '3'                     : 3,
-    '4'                     : 4,
-    '5'                     : 5,
-    '6'                     : 6,
-    '7'                     : 7,
-    '8'                     : 8,
-    '999'                   : 999,
   ),
 ) !default;

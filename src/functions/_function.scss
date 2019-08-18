@@ -30,7 +30,7 @@
 }
 
 @function isDashProp($a) {
-  @if $a == ''or $a == null {
+  @if $a==''or $a==null {
     @return null;
   }
 
@@ -40,22 +40,27 @@
 }
 
 @function isEndWithUnit($x, $y) {
-  @if (map-has-key($propMap, 'propValueScale')) {
-    @if $x == 'a'or $x == 0 {
+  @if (map-has-key($propMap, 'propValue')) {
+    @if $x=='a'or $x==0 {
       @return null;
     }
+
     @else if str-index($x, 'p') {
       @return '%';
     }
+
     @else if str-index($x, 'vh') {
       @return 'vh';
     }
+
     @else if str-index($x, 'vw') {
       @return 'vw';
     }
-    @else if $y == 'px' {
+
+    @else if $y=='px' {
       @return 'px';
     }
+
     @else {
       @return $y;
     }
@@ -67,8 +72,8 @@
 }
 
 @function isPropValue($propMap) {
-  @if (map-has-key($propMap, 'propValueScale')) {
-    @return 'propValueScale';
+  @if (map-has-key($propMap, 'propValue')) {
+    @return 'propValue';
   }
 
   @else {
@@ -77,7 +82,7 @@
 }
 
 @function isDashNegative($v, $w, $x, $y) {
-  @if $v !='v' and $v !='h' and $w !='a'and $w != 0 and $x == $y and $y == 1 {
+  @if $v !='v'and $v !='h'and $w !='a'and $w !=0 and $x==$y and $y==1 {
     @return '-';
   }
 
@@ -87,7 +92,7 @@
 }
 
 @function isLoopNegative($y, $x, $z) {
-  @if $z == 1 and $y !='v' and $y !='h'and $x != 0 and $x != auto {
+  @if $z==1 and $y !='v'and $y !='h'and $x !=0 and $x !=auto {
     @return 1;
   }
 
@@ -96,24 +101,37 @@
   }
 }
 
-@function isUnit($a, $b) {
-  @if str-index($a, 'p') or str-index($a, 'vh') or $b == 'px' {
+@function isAuto($x) {
+  @if $x==1 {
     @return true;
   }
+
+  @else {
+    @return false;
+  }
+}
+
+@function isUnit($a, $b) {
+  @if str-index($a, 'p') or str-index($a, 'vw') or str-index($a, 'vh') or $b=='px' {
+    @return true;
+  }
+
   @else {
     @return false;
   }
 }
 
 @function isValue($test, $size, $x, $y) {
-  @if isPropValue($test) != 'propValueAbbr' and $y != null and $size != 0 {
-    @if isUnit($x, $y) == true {
-      @return $size + isEndWithUnit($x, $y);
+  @if isPropValue($test) !='propValueAbbr'and $y !=null and $size !=0 and $size !='auto' {
+    @if isUnit($x, $y)==true {
+      @return $size+isEndWithUnit($x, $y);
     }
-    @else if isUnit($x, $y) == false {
-      @return $size / 16 + isEndWithUnit($x, $y);
+
+    @else if isUnit($x, $y)==false {
+      @return $size / 16+isEndWithUnit($x, $y);
     }
   }
+
   @else {
     @return $size;
   }

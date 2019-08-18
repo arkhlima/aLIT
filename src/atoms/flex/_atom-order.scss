@@ -6,6 +6,6 @@ $propMap                  : (
   propNameAbbr            : 'ord',
 );
 
-$propMap: recursive-map-merge($propMap, $valueScaleOrder, $config:());
+$propMap: recursive-map-merge($propMap, $valueOrder, $config:());
 
 @include mixin-breakpoint($propMap);
